@@ -39,6 +39,8 @@ func _physics_process(delta):
 
 	move_and_slide()
 
+func no_health():
+	queue_free()
 
 func get_gravity():
 	return jump_gravity if velocity.y < 0 else fall_gravity
@@ -57,3 +59,4 @@ func input():
 		
 	if Input.is_action_just_pressed("shoot"):
 		print("shooted")
+		

@@ -8,6 +8,7 @@ signal no_health
 @export var current := 3
 	
 func damage(attack : Attack):
+	print("oof")
 	current = max(0, current - attack.damage)
 	if current <= 0:
-		get_parent()
+		get_parent().no_health()

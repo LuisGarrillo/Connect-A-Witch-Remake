@@ -1,8 +1,10 @@
 extends RigidBody2D
 
+@export var attack_velocity : float = 40
 @onready var animated_sprite_2d = $AnimatedSprite2D
 var attacking = false
 var walking : bool = false
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,9 +19,9 @@ func _process(delta):
 	if attacking: 
 		animated_sprite_2d.play("attack")
 		if animated_sprite_2d.flip_h:
-			position.x += 10 * delta
+			position.x += attack_velocity * delta
 		else:
-			position.x -= 10 * delta
+			position.x -= attack_velocity * delta
 
 
 func attack(player_horizontal_position):

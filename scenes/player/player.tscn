@@ -231,8 +231,9 @@ shape = SubResource("RectangleShape2D_tcvyj")
 [node name="HealthComponent" type="Node" parent="."]
 script = ExtResource("6_jgylh")
 
-[node name="Hurtbox" parent="." instance=ExtResource("7_p3qy7")]
+[node name="Hurtbox" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("7_p3qy7")]
 position = Vector2(-1, -1)
+health_component = NodePath("../HealthComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
 position = Vector2(1, 6)
